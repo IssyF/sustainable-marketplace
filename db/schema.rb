@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_172646) do
+ActiveRecord::Schema.define(version: 2022_01_12_172857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2022_01_12_172646) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_buyers_on_user_id"
+  end
+
+  create_table "sellers", force: :cascade do |t|
+    t.string "shop_name"
+    t.text "shop_description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_sellers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +46,5 @@ ActiveRecord::Schema.define(version: 2022_01_12_172646) do
   end
 
   add_foreign_key "buyers", "users"
+  add_foreign_key "sellers", "users"
 end
