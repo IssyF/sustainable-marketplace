@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_172857) do
+ActiveRecord::Schema.define(version: 2022_01_12_173220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 2022_01_12_172857) do
     t.index ["user_id"], name: "index_sellers_on_user_id"
   end
 
+  create_table "sustainability_practices", force: :cascade do |t|
+    t.boolean "human_welfare"
+    t.boolean "materials"
+    t.boolean "local"
+    t.boolean "packaging"
+    t.boolean "energy_neutral"
+    t.bigint "seller_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["seller_id"], name: "index_sustainability_practices_on_seller_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -47,4 +59,5 @@ ActiveRecord::Schema.define(version: 2022_01_12_172857) do
 
   add_foreign_key "buyers", "users"
   add_foreign_key "sellers", "users"
+  add_foreign_key "sustainability_practices", "sellers"
 end
