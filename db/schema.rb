@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_173220) do
+ActiveRecord::Schema.define(version: 2022_01_12_174211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,43 @@ ActiveRecord::Schema.define(version: 2022_01_12_173220) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_buyers_on_user_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.string "subcategory"
+    t.float "price"
+    t.string "size"
+    t.bigint "seller_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "description", null: false
+    t.index ["seller_id"], name: "index_listings_on_seller_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "size_rating"
+    t.integer "quality_rating"
+    t.text "review_description"
+    t.bigint "seller_id", null: false
+    t.bigint "sale_id", null: false
+    t.bigint "buyer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["buyer_id"], name: "index_reviews_on_buyer_id"
+    t.index ["sale_id"], name: "index_reviews_on_sale_id"
+    t.index ["seller_id"], name: "index_reviews_on_seller_id"
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.text "shipping_address"
+    t.bigint "listing_id", null: false
+    t.bigint "buyer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["buyer_id"], name: "index_sales_on_buyer_id"
+    t.index ["listing_id"], name: "index_sales_on_listing_id"
   end
 
   create_table "sellers", force: :cascade do |t|
@@ -58,6 +95,12 @@ ActiveRecord::Schema.define(version: 2022_01_12_173220) do
   end
 
   add_foreign_key "buyers", "users"
+  add_foreign_key "listings", "sellers"
+  add_foreign_key "reviews", "buyers"
+  add_foreign_key "reviews", "sales"
+  add_foreign_key "reviews", "sellers"
+  add_foreign_key "sales", "buyers"
+  add_foreign_key "sales", "listings"
   add_foreign_key "sellers", "users"
   add_foreign_key "sustainability_practices", "sellers"
 end
