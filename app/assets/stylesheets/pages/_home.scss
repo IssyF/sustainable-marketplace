@@ -5,6 +5,10 @@
   color: $dark-green;
 }
 
+homepage a:hover {
+  opacity: 70%;
+}
+
 .homepage-story {
   height: 300px;
   padding: 16px;
@@ -15,6 +19,11 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
+  opacity: 95%;
+}
+
+.homepage-story:hover {
+  opacity: 100%;
 }
 
 .homepage-story h2 {
@@ -23,8 +32,7 @@
 }
 
 .homepage-story p {
-  color: white;
-  opacity: 80%;
+  color: $light-pink;
 }
 
 .homepage a:hover {
@@ -64,8 +72,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  opacity: 80%;
+}
+
+.carousel-caption:hover {
+  opacity: 100%;
 }
 
 .carousel-caption h3 {
   margin: 0;
+}
+
+.carousel-caption p {
+  color: $light-pink;
 }
