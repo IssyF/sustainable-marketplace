@@ -1,7 +1,65 @@
 // Specific CSS for your home-page
+.homepage h2 {
+  font-size: 24px;
+}
+
 .homepage-story {
-  height: 200px;
-  border: 1px solid black;
-  padding: 8px;
+  height: 300px;
+  padding: 16px;
   margin-bottom: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.homepage-story h2 {
+  color: white;
+  font-size: 32px;
+}
+
+.homepage-story p {
+  color: white;
+  opacity: 80%;
+}
+
+.homepage a:hover {
+  text-decoration: none;
+}
+
+#new-in {
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
+  background-size: cover;
+  background-position: center center;
+}
+
+#activewear {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center top;
+}
+
+.carousel-item {
+  height: 200px;
+  margin-bottom: 16px;
+  // width: 300px;
+}
+
+.carousel-item img {
+  filter: brightness(50%);
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-caption {
+  height: 72%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carousel-caption h3 {
+  margin: 0;
 }
