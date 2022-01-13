@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'users#profile'
   get 'seller_home', to: 'sellers#seller_home'
+  get 'basket', to: 'pages#basket'
 
   resources :buyers, only: [ :new, :create, :edit, :update ]
 
