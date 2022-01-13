@@ -1,6 +1,8 @@
 // Specific CSS for your home-page
 .homepage h2 {
-  font-size: 24px;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: $dark-green;
 }
 
 .homepage-story {
@@ -41,10 +43,14 @@
   background-position: center top;
 }
 
+.homepage-carousels {
+  margin-top: 30px;
+}
+
 .carousel-item {
-  height: 200px;
-  margin-bottom: 16px;
-  // width: 300px;
+  height: 150px;
+  margin-bottom: 24px;
+  width: 100%;
 }
 
 .carousel-item img {
