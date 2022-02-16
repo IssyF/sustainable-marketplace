@@ -1,10 +1,29 @@
 <div class="navbar navbar-expand navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "avatar_logo.PNG" %>
-  <% end %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+            <%= image_tag  "avatar_logo.PNG", class: "logo dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+              <%# add the logic%>
+              <%= link_to "New in", new_in_listings_path, class: "dropdown-item" %>
+              <%= link_to "Search", "#", class: "dropdown-item" %>
+              <%= link_to "Dresses", "#", class: "dropdown-item" %>
+              <%= link_to "Tops", "#", class: "dropdown-item" %>
+              <%= link_to "Trousers", "#", class: "dropdown-item" %>
+              <%= link_to "Jeans", "#", class: "dropdown-item" %>
+              <%= link_to "Skirts", "#", class: "dropdown-item" %>
+              <%= link_to "Activewear", "#", class: "dropdown-item" %>
+              <%= link_to "Accessories", "#", class: "dropdown-item" %>
+              <%= link_to "About us", "#", class: "dropdown-item" %>
+            </div>
+          </li>
+    </ul>
+  </div>
 
   <div id="nav-title">
-    <h1>MAMPAN</h1>
+    <h1>
+      <%= link_to "MAMPAN", root_path %>
+    </h1>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -27,6 +46,9 @@
           </div>
         </li>
       <% else %>
+        <%= link_to basket_path do %>
+          <i class="fas fa-shopping-bag basket"></i>
+        <% end %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
