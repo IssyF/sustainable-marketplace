@@ -1,7 +1,8 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
-puts "Deleting all users..."
+puts "Deleting all data..."
+Listing.destroy_all
 Seller.destroy_all
 Buyer.destroy_all
 User.destroy_all
@@ -120,20 +121,6 @@ Listing.create!(
   size: "One Size",
   description: "Oversized bow with barrette clip. Part of our 'Save The Scraps' initiative. Made from left over fabric scraps."
 )
-puts "Seller 2 listings created."
-
-# seller number 3
-User.create!(
-  username: "before",
-  email: "before@test.com",
-  password: "123123"
-)
-Seller.create!(
-  shop_name: "Before July",
-  shop_description: "Timeless statement pieces",
-  user: User.last
-)
-puts "Adding listings for seller 3..."
 Listing.create!(
   seller: Seller.last,
   title: "Enduro Full Length Leggings - Black",
@@ -188,21 +175,126 @@ Listing.create!(
   size: "UK8",
   description: "A lightweight vest with a racer back. This vest has a curved hem and contrast edging on the neck and arm hole for a sporty feel. 95% Viscose Bamboo, 5% Elastane."
 )
+puts "Seller 2 listings created."
+
+# seller number 3
+User.create!(
+  username: "before",
+  email: "before@test.com",
+  password: "123123"
+)
+Seller.create!(
+  shop_name: "Before July",
+  shop_description: "Timeless statement pieces",
+  user: User.last
+)
+puts "Adding listings for seller 3..."
+Listing.create!(
+  seller: Seller.last,
+  title: "The Odette Dress Mini",
+  category: "dresses",
+  subcategory: "day dresses",
+  price: 98,
+  size: "UK12",
+  description: "100% Cotton, fixed top wrapped with a full skirt. Mini length. Please cool hand wash and leave to hang dry. Concealed zip at back centre. Puff sleeve detailing."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "The Courtney Dress",
+  category: "dresses",
+  subcategory: "day dresses",
+  price: 100,
+  size: "UK16",
+  description: "100% Cotton, fixed top wrapped with a full skirt. Mini length. Please cool hand wash and leave to hang dry. Concealed zip at back centre. Puff sleeve detailing with wrist ties."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "The Madeline Top - Green",
+  category: "tops",
+  subcategory: "blouses",
+  price: 80,
+  size: "UK8",
+  description: "100% Cotton. Square neckline cropped top. Please cool hand wash and leave to hang dry. Open eneded zip at centre back."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "The Madeline Top - Black",
+  category: "tops",
+  subcategory: "blouses",
+  price: 80,
+  size: "UK10",
+  description: "100% Cotton. Square neckline cropped top. Please cool hand wash and leave to hang dry. Open eneded zip at centre back."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "The Odette Top - Orange Print",
+  category: "tops",
+  subcategory: "blouses",
+  price: 80,
+  size: "UK12",
+  description: "100% Cotton. Wrap shape, cropped length with tie detailing and puff sleeves. Please cool hand wash and leave to hang dry"
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "The Eva Luxe Lounge Trouser - Pink",
+  category: "bottoms",
+  subcategory: "trousers",
+  price: 70,
+  size: "UK12",
+  description: "Cotton needlecord fabric with soft luxe feel. Elasticated Waist with Wide leg and side pockets. Hand wash only."
+)
 puts "Seller 3 listings created."
 
 # seller number 4
 User.create!(
-  username: "bee",
-  email: "bee@test.com",
+  username: "yala",
+  email: "yala@test.com",
   password: "123123"
 )
 Seller.create!(
-  shop_name: "The Abstract Bee",
-  shop_description: "Handmade bee-auties for you and your home",
+  shop_name: "YALA",
+  shop_description: "Yala is an award-winning African jewellery brand designed for the modern woman.",
   user: User.last
 )
-puts "Adding listings for seller 2..."
-puts "Seller 2 listings created."
+puts "Adding listings for seller 4..."
+Listing.create!(
+  seller: Seller.last,
+  title: "Ulumbi Sunburst Earring Hoops - Gold",
+  category: "accessories",
+  subcategory: "jewellery",
+  price: 90,
+  size: "One Size",
+  description: "The Ulumbi sunburst hoops are unmistakable head-turning statement earrings. Showcasing the talented craftsmanship of the Kenyan artisans who made them, each spike of these earrings has been painstakingly filed by hand to create the sunburst motif. Made from recycled brass, the hoops are available in 24k gold plating or silver plating. They fasten with a 9ct gold creole clasp or a 925 sterling silver creole clasp."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Olengo Mismatched Star & Moon Earring Studs - Silver",
+  category: "accessories",
+  subcategory: "jewellery",
+  price: 55,
+  size: "One Size",
+  description: "Olengo is a cute, mismatched pair of stud earrings with a star and crescent moon motif. Small enough for everyday wear, but just different enough to trigger a few double-takes! The studs are made from pure recycled brass and are available in gold plating or silver plating. They attach with surgical steel ear pins, for comfortable all-day wear. We also offer spare earring backs, if you'd like to keep some extras just in case."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Zero Waste Brass Pendant",
+  category: "accessories",
+  subcategory: "jewellery",
+  price: 35,
+  size: "One Size",
+  description: "Although we try hard to eliminate waste from our manufacturing, sometimes it's unavoidable. During the process of casting our jewellery, small randomly-shaped pieces of brass become separated from the finished product. George and and his team in the brass workshop rescue these pieces and transform them into smooth, bean-shaped pendants which they call organics, which are then delicately hung from a 14k gold chain made using recycled gold. The chain is 40cm in length."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Mbita Monochrome & Gold Beaded Necklace",
+  category: "accessories",
+  subcategory: "jewellery",
+  price: 45,
+  size: "One Size",
+  description: "Mbita is the perfect minimalist beaded necklace. A single strand of black, gold and white seed beads are strung on a super-strong 49 strand stainless steel wire and fastened with a gold vermeil lobster clasp. The 7cm gold extension chain will ensure the perfect fit."
+)
+puts "Seller 4 listings created."
+
 # seller number 5
 User.create!(
   username: "albaray",
@@ -214,8 +306,81 @@ Seller.create!(
   shop_description: "Thoughtful fashion designed for everyday",
   user: User.last
 )
-puts "Adding listings for seller 2..."
-puts "Seller 2 listings created."
+puts "Adding listings for seller 5..."
+Listing.create!(
+  seller: Seller.last,
+  title: "Organic Denim Flared Jean",
+  category: "bottoms",
+  subcategory: "jeans",
+  price: 69,
+  size: "UK10",
+  description: "These flared jeans are cut with a flattering silhouette. Designed with a high waist, slim through the top leg and gently flaring to the hem. Featuring the classic 5 pocket detail and concealed button fly. Crafted from 100% organic cotton in an authentic dark vintage wash, they are super soft and comfy."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Winter White Straight Leg Jean",
+  category: "bottoms",
+  subcategory: "jeans",
+  price: 69,
+  size: "UK18",
+  description: "These classic 5 pocket straight leg jeans are cut with a flattering silhouette, a higher waist and a concealed button fly detail. Crafted from 100% organic cotton in a winter white colour, they are super soft and perfect styled with a chunky jumper and boots."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Patchwork Print Jacket",
+  category: "outerwear",
+  subcategory: "jackets",
+  price: 129,
+  size: "UK14",
+  description: "This quilted jacket is a 'must have' this season. Fully reversible, it is designed with a unique patchwork print on one side and denim blue on the other. The patchwork print is inspired by a family heirloom dating back to the 1950's. Featuring a collar and placket with metal popper studs and patch pockets on one side and jet pockets on the reverse. The curved cuffs, hem and pockets are all bound. Crafted from 100%  crisp organic cotton, this jacket is truly unique and limited in numbers."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Buttercream Double Breasted Coat",
+  category: "outerwear",
+  subcategory: "coats",
+  price: 99,
+  size: "UK18",
+  description: "This relaxed, slightly over sized coat is a must have this season. Double breasted with mock horn buttons, a rever collar and flap pockets. Mid calf length with a back vent and drop shoulders. The softest buttercream colour sets this coat apart on a cold winter's day. The fabric is brushed which gives a luxurious finish.  Made from dead stock fabric and lined with 100% recycled polyester."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Collar Stripe Jumper",
+  category: "tops",
+  subcategory: "knitwear",
+  price: 75,
+  size: "UK10",
+  description: "This long sleeved jumper is designed with a classic navy and cream Breton stripe. Featuring a chunky collar and V neck placket with deep rib cuffs and hem. The hem has side splits and is slightly longer at the back. Super soft and cosy, this jumper is perfect styled with a pair of jeans. Made from a blend of yarns of which 45% are recycled."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Zig Zag Midi Shirt Dress",
+  category: "dresses",
+  subcategory: "day dresses",
+  price: 89,
+  size: "UK12",
+  description: "This midi dress is designed with a waist seam and pleated skirt. Featuring a collar and functioning placket to the waist. Featuring an all-over black and white zig zag print. Crafted from the softest sustainable ECOVERO™ viscose is it super soft and comfy."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Ditsy Ornate Floral Blouse",
+  category: "tops",
+  subcategory: "blouses",
+  price: 65,
+  size: "UK8",
+  description: "This blouse features a brightly coloured ditsy floral on a back base. A relax fit with gathering at the front and back yoke. The 3/4 sleeves have a gentle blouson effect with a narrow cuff and functioning button. Featuring a collar and button through placket with a straight hem, it can be styled tucked in our worn out. Crafted from the softest, sustainable ECOVERO™ viscose twill."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Blue Marl Rib Knitted Cami",
+  category: "tops",
+  subcategory: "camisoles",
+  price: 49,
+  size: "UK16",
+  description: "This V neck knitted cami is designed to be bra friendly. It is ribbed to give a neater fit while ensuring comfort. Super soft to touch and in a beautiful marled blue, it is perfect styled on its own for those warmer transitional days or teamed with its coordinated cardigan . Made form a blend of yarns of which 55% are recyced."
+)
+puts "Seller 5 listings created."
+
 # seller number 6
 User.create!(
   username: "omnes",
@@ -227,6 +392,69 @@ Seller.create!(
   shop_description: "We're here to fashion a more sustainable future",
   user: User.last
 )
-puts "Adding listings for seller 2..."
-puts "Seller 2 listings created."
+puts "Adding listings for seller 6..."
+Listing.create!(
+  seller: Seller.last,
+  title: "Marta High Rise Straight Jeans in Black",
+  category: "bottoms",
+  subcategory: "jeans",
+  price: 55,
+  size: "UK14",
+  description: "Meet Marta - high waisted, straight legged and sustainable - she's our new everyday denim jean in plain black. Pair with a tee or cosy knit for an easy daytime look, or dress up with your favourite heels to take your look from day to night. As well as looking great, we've made sure our Marta jeans have the lowest possible impact on the planet - so you can feel great about wearing them too. Expertly crafted utilising REFIBRA™ technology, which takes production cotton scraps and upcycles it into new TENCEL™ Lyocell fibres, contributing to a circular economy."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Mabel Straight Leg Trouser in Mono Gingham",
+  category: "bottoms",
+  subcategory: "trousers",
+  price: 39,
+  size: "UK18",
+  description: "With a relaxed, straight leg fit and ankle skimming cut, our Mabel trousers are both trendy and timeless. Pair with a classic white shirt or an oversized knit, these hard-working trousers are versatile, warm and wearable. Finished with button and zip fastening and a flattering cut, the Mabels are a guaranteed welcome addition to a winter wardrobe. Made from full recyclable biodegradable BCI Cotton with a soft brushed hand feel in on-trend monochrome gingham, our Mabel trousers are sustainable and stylish and play a part in supporting ethical, environmentally conscious cotton production."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Jeanne Mini Skirt in Petrol Blue",
+  category: "bottoms",
+  subcategory: "skirts",
+  price: 39,
+  size: "UK6",
+  description: "It's official - the mini skirt is back, and we think it's here to stay. If you love our satin slip dresses, then you're sure to be a fan of Jeanne Bias Mini Skirt. With its slinky fabric (that's made entirely from recycled polyester, by the way), it sits on the hips and flares out, giving a slight A-line silhouette. Pair it with a tiny t-shirt in summer to make it truly noughties, or with our Rosika cardigan for a look à la Cher Horowitz."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Vida Bias Satin Slip Midi Skirt in Cream",
+  category: "bottoms",
+  subcategory: "skirts",
+  price: 45,
+  size: "UK10",
+  description: "Our nod to 90s chic, the Vida is crafted from 100% Recycled Polyester Satin and cut to a chic midi length to flatter all body types. With an elasticated waistband and relaxed fit, we've found the answer to all your day to night dressing dilemmas with a skirt that is both stylish and sustainable. Pair with a white t-shirt and trainers for lowkey daytime glamour or dial up the drama with our matching Eliza cami top for co-ords that pack a punch."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Marianne Midi Dress in Blue Colourblock",
+  category: "dresses",
+  subcategory: "evening dresses",
+  price: 59,
+  size: "UK12",
+  description: "Make way for Marianne! The midi colourblock satin slip dress inspired by the 90s. An update on our Florence and Riviera styles, it has a tie strap back, v neckline and duo colourway with two tonal blues. Crafted with 100% Recycled Polyester that's certified by the Global Recycle Standard, it's entirely made from post-consumer polyester, so it's just as sustainable as it is stylish."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Petra Mini Dress in Purple Floral",
+  category: "dresses",
+  subcategory: "day dresses",
+  price: 69,
+  size: "UK14",
+  description: "Looking for a dress to take you from day to night? The Petra Ruched Sleeve Wrap Mini Dress is your answer. With its ruched long sleeves, slightly puffed shoulder detail and mini length, it reminisces of silhouettes seen in the 1980s. Crafted with 100% post-consumer polyester, this lined sheer fabric, with its pretty purple floral print, is as sustainable is it is stylish. A go-to dress for work and play, Petra is easily dressed up or down depending on your mood or occasion."
+)
+Listing.create!(
+  seller: Seller.last,
+  title: "Serena Button Front Shacket Overshirt in Mono Gingham",
+  category: "outerwear",
+  subcategory: "jackets",
+  price: 65,
+  size: "UK6",
+  description: "Don’t let cooler temperatures and unpredictable weather dull your style. Embrace jacket season and lean into autumnal layering with our Serena Overshirt. Part jacket, part shirt, this timeless shacket features a relaxed fit and practical chest pockets for the perfect trans seasonal piece to see you into the winter months and beyond. Made at a fully audited factory in Romania using 100% biodegradable BCI Cotton that’s finished with a soft brushed hand feel, with chic button front fastening and cuff, the Serena Overshirt is the perfect finishing touch to any outfit."
+)
+puts "Seller 6 listings created."
 puts "Six sellers created with listings"
