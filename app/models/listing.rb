@@ -1,6 +1,7 @@
 class Listing < ApplicationRecord
   belongs_to :seller
   has_one :sale
+  has_one_attached :photo
 
   validates :title, presence: true, length: { in: 3..100 }
   validates :category, presence: true, inclusion: { in: %w[dresses tops outerwear bottoms shoes accessories activewear] }

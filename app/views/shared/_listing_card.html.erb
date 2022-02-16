@@ -3,7 +3,7 @@
   <% @listings.each do |listing| %>
     <%= link_to listing_path(listing) do %>
       <div class="listing-card">
-          <%= image_tag "before_july.png" %>
+          <%= cl_image_tag listing.photo.key %>
           <div class="listing-text">
             <h5><%= listing.title %></h5>
             <p class="shop-name"><em>Sold by <%= listing.seller.shop_name %></em></p>
