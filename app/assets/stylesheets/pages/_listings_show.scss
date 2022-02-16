@@ -8,6 +8,7 @@
 }
 
 .listing-info h4 {
+  margin-top: 16px;
   font-size: 18px;
 }
 
@@ -57,7 +58,7 @@
 
 @media(max-width: 768px) {
   .listing-show img {
-    width: 100%;
+    width: 95%;
   }
 
   .listing-show {

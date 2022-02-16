@@ -1,0 +1,12 @@
+.button {
+  background-color: $dark-green;
+  color: white;
+  padding: 4px 16px;
+  box-shadow: none;
+  border: none;
+}
+
+.button:hover {
+  opacity: 95%;
+  transition: 0.5s;
+}
