@@ -1,0 +1,18 @@
+
+<div class="listing-cards">
+  <% @listings.each do |listing| %>
+    <%= link_to listing_path(listing) do %>
+      <div class="listing-card">
+          <%= image_tag "before_july.png" %>
+          <div class="listing-text">
+            <h5><%= listing.title %></h5>
+            <p class="shop-name"><em>Sold by <%= listing.seller.shop_name %></em></p>
+            <div class="size-price">
+              <p><%= listing.size %></p>
+              <p>£<%= listing.price.round() %></p>
+            </div>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
