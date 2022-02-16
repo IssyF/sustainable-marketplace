@@ -1,0 +1,67 @@
+.listing-show {
+  display: flex;
+  margin-top: 16px;
+}
+
+.listing-info {
+  padding: 8px 16px;
+}
+
+.listing-info h4 {
+  font-size: 18px;
+}
+
+.listing-info h5 {
+  font-size: 14px;
+}
+
+.listing-info p {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.listing-info button {
+  margin: 16px 0px;
+}
+
+.listing-show img {
+  width: 45%;
+  // height: 400px;
+  object-fit: cover;
+  height: 80vh;
+}
+
+.listing-show .key-info {
+  display: block;
+}
+
+.seller-details {
+  margin-top: 16px;
+}
+
+.seller-details ul {
+  font-size: 12px;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+@media(max-width: 992px) {
+  .listing-show img {
+    width: 65%;
+  }
+
+  // .seller-details {
+  //   display: block;
+  // }
+}
+
+@media(max-width: 768px) {
+  .listing-show img {
+    width: 100%;
+  }
+
+  .listing-show {
+    display: block;
+  }
+
+}

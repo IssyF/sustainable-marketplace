@@ -1,3 +1,35 @@
-<h1>Listing show page</h1>
+<div class="container listing-show">
 
-<%= cl_image_tag @listing.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @listing.photo.key %>
+
+  <div class="listing-info">
+
+    <div class="key-info">
+      <h4><%= @listing.title %></h4>
+      <h5>£<%= @listing.price.round() %></h5>
+      <h5>Available in: <%= @listing.size %></h5>
+
+      <%# use javascript to change to in basket when pressed? %>
+      <button>Add to Bag</button>
+
+      <p><%= @listing.description %></p>
+    </div>
+
+    <div class="seller-details">
+      <h5>Sold by <%= @listing.seller.shop_name %></h5>
+      <p>Sustainability practices:</p>
+      <ul>
+        <li>Placeholder...</li>
+        <li>Placeholder...</li>
+        <li>Placeholder...</li>
+        <li>Placeholder...</li>
+      </ul>
+
+      <%= link_to seller_path(@listing.seller) do %>
+        <p>See more from  <%= @listing.seller.shop_name %></p>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

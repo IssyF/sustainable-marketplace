@@ -103,7 +103,7 @@ Listing.create!(
   size: "One Size",
   description: "Oversized bow with barrette clip. Part of our 'Save The Scraps' initiative. Made from left over fabric scraps."
 )
-Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/molby/Paloma.jpg')), filename: 'Paloma.jpg')
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/molby/palomahair.jpg')), filename: 'palomahair.jpg')
 puts "Seller 1 listings created."
 
 # seller number 2

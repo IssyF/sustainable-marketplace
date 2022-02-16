@@ -4,6 +4,10 @@ class ListingsController < ApplicationController
     @listings = shuffled_listings.first(15)
   end
 
+  def activewear
+    @listings = Listing.where(category: "activewear")
+  end
+
   def index
     @listings = Listing.all
   end
@@ -19,6 +23,10 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(params[:listing])
     @listing.save
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
   end
 
   private
