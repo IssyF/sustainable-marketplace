@@ -1,4 +1,6 @@
 class SellersController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def bam
     seller = Seller.find_by_shop_name("BAM")
     @listings = Listing.where(seller: seller)
