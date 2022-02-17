@@ -9,8 +9,10 @@
       <h5>£<%= @listing.price.round() %></h5>
       <h5>Available in: <%= @listing.size %></h5>
 
-      <%# use javascript to change to in basket when pressed? %>
-      <button class="button">Add to Bag</button>
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'listing_id', @listing.id %>
+        <%= submit_tag 'Buy Now', class: 'button' %>
+      <% end %>
 
       <p><%= @listing.description %></p>
     </div>

@@ -2,7 +2,7 @@ class Seller < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :listings, dependent: :destroy
-  has_many :sales, through: :listings
+  has_many :orders, through: :listings
   has_one :sustainability_practice
 
   validates :shop_name, presence: true, uniqueness: true

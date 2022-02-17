@@ -4,7 +4,7 @@ class CreateListings < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :category
       t.string :subcategory
-      t.float :price
+      t.monetize :price, currency: { present: false}
       t.string :size
       t.references :seller, null: false, foreign_key: true
 

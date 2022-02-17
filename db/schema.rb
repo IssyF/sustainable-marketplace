@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_16_174121) do
+ActiveRecord::Schema.define(version: 2022_02_17_120827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,14 +55,25 @@ ActiveRecord::Schema.define(version: 2022_02_16_174121) do
     t.string "title"
     t.string "category"
     t.string "subcategory"
-    t.float "price"
+    t.integer "price_cents", default: 0, null: false
     t.string "size"
     t.bigint "seller_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description", null: false
-    t.boolean "in_basket", default: false
     t.index ["seller_id"], name: "index_listings_on_seller_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "listing_id", null: false
+    t.bigint "buyer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["buyer_id"], name: "index_orders_on_buyer_id"
+    t.index ["listing_id"], name: "index_orders_on_listing_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -70,23 +81,13 @@ ActiveRecord::Schema.define(version: 2022_02_16_174121) do
     t.integer "quality_rating"
     t.text "review_description"
     t.bigint "seller_id", null: false
-    t.bigint "sale_id", null: false
+    t.bigint "order_id", null: false
     t.bigint "buyer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["buyer_id"], name: "index_reviews_on_buyer_id"
-    t.index ["sale_id"], name: "index_reviews_on_sale_id"
+    t.index ["order_id"], name: "index_reviews_on_order_id"
     t.index ["seller_id"], name: "index_reviews_on_seller_id"
-  end
-
-  create_table "sales", force: :cascade do |t|
-    t.text "shipping_address"
-    t.bigint "listing_id", null: false
-    t.bigint "buyer_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["buyer_id"], name: "index_sales_on_buyer_id"
-    t.index ["listing_id"], name: "index_sales_on_listing_id"
   end
 
   create_table "sellers", force: :cascade do |t|
@@ -127,11 +128,11 @@ ActiveRecord::Schema.define(version: 2022_02_16_174121) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "buyers", "users"
   add_foreign_key "listings", "sellers"
+  add_foreign_key "orders", "buyers"
+  add_foreign_key "orders", "listings"
   add_foreign_key "reviews", "buyers"
-  add_foreign_key "reviews", "sales"
+  add_foreign_key "reviews", "orders"
   add_foreign_key "reviews", "sellers"
-  add_foreign_key "sales", "buyers"
-  add_foreign_key "sales", "listings"
   add_foreign_key "sellers", "users"
   add_foreign_key "sustainability_practices", "sellers"
 end

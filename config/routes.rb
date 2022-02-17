@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -23,11 +25,11 @@ Rails.application.routes.draw do
       get :new_in
       get :activewear
     end
-    resources :sales, only: [ :new, :create ] do
-      resources :reviews, only: [ :new, :create ]
-    end
   end
 
-  resources :sales, only: :show
+  resources :orders, only: [:show, :create, :index] do
+    resources :payments, only: :new
+    resources :reviews, only: [ :new, :create ]
+  end
   resources :reviews, only: [ :index, :show ]
 end
