@@ -10,6 +10,18 @@ class ListingsController < ApplicationController
     @listings = Listing.where(category: "activewear")
   end
 
+  def denim
+    @listings = Listing.where(subcategory: "jeans")
+  end
+
+  def jackets
+    @listings = Listing.where(category: "outerwear")
+  end
+
+  def day_dresses
+    @listings = Listing.where(subcategory: "day dresses")
+  end
+
   def index
     @listings = Listing.all
   end

@@ -28,7 +28,7 @@ Rails.application.routes.draw do
       get :activewear
       get :denim
       get :jackets
-      get :midi_dresses
+      get :day_dresses
     end
   end
 
