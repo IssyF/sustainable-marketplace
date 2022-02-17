@@ -7,7 +7,7 @@ class BuyersController < ApplicationController
     @buyer = Buyer.new(buyer_params)
     @buyer.user = current_user
     if @buyer.save!
-      redirect_to :root_path
+      redirect_to '/'
     else
       render :new
     end
