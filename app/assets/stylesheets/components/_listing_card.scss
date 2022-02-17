@@ -19,6 +19,12 @@
   }
 }
 
+@media(max-width: 480px) {
+  .listing-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 .listing-cards a {
   color: black;
   width: 225px;
