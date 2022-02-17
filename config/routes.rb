@@ -24,11 +24,18 @@ Rails.application.routes.draw do
 
   resources :listings, only: [ :index, :show, :edit, :update, :destroy] do
     collection do
+      # featured on home page
       get :new_in
       get :activewear
       get :denim
       get :jackets
       get :day_dresses
+      # others on nav bar
+      get :dresses
+      get :tops
+      get :trousers
+      get :skirts
+      get :accessories
     end
   end
 

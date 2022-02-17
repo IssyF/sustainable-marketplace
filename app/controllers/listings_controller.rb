@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new_in, :activewear, :index, :show, :search]
+  skip_before_action :authenticate_user!, except: [:new, :create, :update]
 
   def new_in
     shuffled_listings = Listing.all.shuffle
@@ -20,6 +20,26 @@ class ListingsController < ApplicationController
 
   def day_dresses
     @listings = Listing.where(subcategory: "day dresses")
+  end
+
+  def dresses
+    @listings = Listing.where(category: "dresses")
+  end
+
+  def tops
+    @listings = Listing.where(category: "tops")
+  end
+
+  def trousers
+    @listings = Listing.where(subcategory: "trousers")
+  end
+
+  def skirts
+    @listings = Listing.where(subcategory: "skirts")
+  end
+
+  def accessories
+    @listings = Listing.where(category: "accessories")
   end
 
   def index

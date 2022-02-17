@@ -14,7 +14,7 @@
 }
 
 .dropdown-menu a {
-  color: $dark-green;
+  color: $pink;
   font-size: 14px;
 }
 
@@ -37,4 +37,8 @@
 .logo {
   width: 50px;
   cursor: pointer;
+}
+
+.dropdown-item.category {
+  color: $dark-green;
 }

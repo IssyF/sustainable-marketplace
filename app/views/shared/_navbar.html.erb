@@ -8,14 +8,15 @@
               <%= link_to "New in", new_in_listings_path, class: "dropdown-item" %>
               <%= link_to "Search", listings_path, class: "dropdown-item" %>
               <%# <p>By Cateogry</p> %>
-              <%= link_to "Dresses", "#", class: "dropdown-item" %>
-              <%= link_to "Tops", "#", class: "dropdown-item" %>
-              <%= link_to "Trousers", "#", class: "dropdown-item" %>
-              <%= link_to "Jeans", "#", class: "dropdown-item" %>
-              <%= link_to "Skirts", "#", class: "dropdown-item" %>
-              <%= link_to "Activewear", "#", class: "dropdown-item" %>
-              <%= link_to "Accessories", "#", class: "dropdown-item" %>
-              <%= link_to "About us", "#", class: "dropdown-item" %>
+              <%= link_to "Dresses", dresses_listings_path, class: "dropdown-item category" %>
+              <%= link_to "Tops", tops_listings_path, class: "dropdown-item category" %>
+              <%= link_to "Trousers", trousers_listings_path, class: "dropdown-item category" %>
+              <%= link_to "Jeans", denim_listings_path, class: "dropdown-item category" %>
+              <%= link_to "Skirts", skirts_listings_path, class: "dropdown-item category" %>
+              <%= link_to "Jackets and Coats", jackets_listings_path, class: "dropdown-item category" %>
+              <%= link_to "Activewear", activewear_listings_path, class: "dropdown-item category" %>
+              <%= link_to "Accessories", accessories_listings_path, class: "dropdown-item category" %>
+              <%= link_to "About us", pages_path, class: "dropdown-item" %>
             </div>
           </li>
     </ul>
