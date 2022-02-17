@@ -1,0 +1,8 @@
+<% if current_user == nil %>
+  <div class="new-user">
+    <p>New here?</p>
+    <%= link_to "sign up", new_user_registration_path %>
+    <p> or </p>
+    <%= link_to "read about us", pages_path %>
+  </div>
+<% end %>

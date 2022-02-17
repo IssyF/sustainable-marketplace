@@ -1,0 +1,10 @@
+<div class="container buyer-new">
+  <h2 class="page-title">Complete your profile...</h2>
+
+  <h5>Add your shipping address:</h5>
+  <%= form_for(@buyer) do |f| %>
+  <%= f.text_field :address %>
+  <%= f.submit 'Complete' %>
+<% end %>
+
+</div>

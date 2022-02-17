@@ -23,7 +23,7 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.new(params[:listing])
+    @listing = Listing.new(listing_params)
     @listing.save
   end
 

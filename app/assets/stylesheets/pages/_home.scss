@@ -11,15 +11,21 @@ homepage a:hover {
 
 .homepage-story {
   height: 300px;
+  width: 100%;
   padding: 16px;
   margin-bottom: 16px;
   text-align: center;
+  opacity: 95%;
+}
+
+.homepage-story a {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  opacity: 95%;
 }
 
 .homepage-story:hover {

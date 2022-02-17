@@ -1,0 +1,30 @@
+.new-user {
+  width: 100%;
+  border: none;
+  padding: 2px 16px;
+  margin-bottom: 16px;
+  background-color: $dark-green;
+  text-align: center;
+}
+
+.new-user p, a {
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 4px;
+  padding: 0;
+  font-size: 12px;
+}
+
+.new-user p {
+  color: white;
+}
+
+.new-user a {
+  color: $light-pink;
+  opacity: 100%;
+}
+
+.new-user a:hover {
+  text-decoration: none;
+  opacity: 85%;
+}

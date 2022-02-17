@@ -1,18 +1,18 @@
 <div class="container homepage">
 
-  <%= link_to new_in_listings_path do %>
     <div class="homepage-story" id="new-in">
-      <h2>New in</h2>
-      <p>Browse the latest drops from our sustainable sellers</p>
+      <%= link_to new_in_listings_path do %>
+        <h2>New in</h2>
+        <p>Browse the latest drops from our sustainable sellers</p>
+      <% end %>
     </div>
-  <% end %>
 
-  <%= link_to activewear_listings_path do %>
     <div class="homepage-story" id="activewear">
-      <h2>Focus on: Activewear</h2>
-      <p>Kick start your new year's resolution in style</p>
+      <%= link_to activewear_listings_path do %>
+        <h2>Focus on: Activewear</h2>
+        <p>Kick start your new year's resolution in style</p>
+      <% end %>
     </div>
-  <% end %>
 
   <div class="homepage-carousels">
 
@@ -23,7 +23,7 @@
 
         <div class="carousel-item active">
           <img class="d-block w-100" src="https://images.unsplash.com/flagged/photo-1554033750-2137b5cfd7ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1978&q=80" alt="Coats and jackets">
-          <%= link_to "#" do %>
+          <%= link_to jackets_listings_path do %>
             <div class="carousel-caption">
               <h3>Coats and Jackets</h3>
             </div>
@@ -32,7 +32,7 @@
 
         <div class="carousel-item">
           <img class="w-100" src="https://images.unsplash.com/photo-1516810773736-19a71ee11dab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="Knitwear">
-          <%= link_to "#" do %>
+          <%= link_to denim_listings_path do %>
             <div class="carousel-caption">
               <h3>Classic Denim</h3>
             </div>
@@ -40,10 +40,10 @@
         </div>
 
         <div class="carousel-item">
-          <img class="w-100" src="https://images.unsplash.com/photo-1602250523342-d2212b96a297?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" alt="Boots">
-          <%= link_to "#" do %>
+          <img class="w-100" src="https://images.unsplash.com/photo-1532675432006-329c6fed7045?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1854&q=80" alt="Midi dress">
+          <%= link_to midi_dresses_listings_path do %>
             <div class="carousel-caption">
-              <h3>Boots</h3>
+              <h3>Midi Dresses</h3>
             </div>
           <% end %>
         </div>
@@ -66,7 +66,7 @@
 
         <div class="carousel-item active">
           <%= image_tag "bamboo.png", class:"d-block w-100", alt:"Back view of lady wearing yoga bra and leggings, stretching to the side" %>
-          <%= link_to "#" do %>
+          <%= link_to bam_sellers_path do %>
             <div class="carousel-caption">
               <h3>BAM</h3>
               <p>Natural activewear</p>
@@ -76,7 +76,7 @@
 
         <div class="carousel-item">
           <%= image_tag "before_july.png", class:"d-block w-100", alt:"Green puff sleeve crop top with cow print high waisted jeans" %>
-          <%= link_to "#" do %>
+          <%= link_to before_july_sellers_path do %>
             <div class="carousel-caption">
               <h3>Before July</h3>
               <p>Timeless statement pieces</p>
@@ -86,7 +86,7 @@
 
         <div class="carousel-item">
           <%= image_tag "molby.png", class:"d-block w-100", alt:"Back view of lady wearing beige and black seersucker gingham dress and matching hair bow" %>
-          <%= link_to "#" do %>
+          <%= link_to molby_sellers_path do %>
             <div class="carousel-caption">
               <h3>Molby the Label</h3>
               <p>Handmade British slow fashion</p>
