@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new_in, :activewear, :index, :show, :search]
+
   def new_in
     shuffled_listings = Listing.all.shuffle
     @listings = shuffled_listings.first(15)

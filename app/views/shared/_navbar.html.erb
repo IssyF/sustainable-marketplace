@@ -30,9 +30,6 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <%= link_to basket_path do %>
-          <i class="fas fa-shopping-bag basket"></i>
-        <% end %>
         <%# <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
         <%# </li> %>
@@ -47,9 +44,6 @@
           </div>
         </li>
       <% else %>
-        <%= link_to basket_path do %>
-          <i class="fas fa-shopping-bag basket"></i>
-        <% end %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>

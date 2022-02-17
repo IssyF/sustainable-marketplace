@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new_in, :activewear, :index, :show, :search]
+
   def create
     listing = Listing.find(params[:listing_id])
     order  = Order.create!(
