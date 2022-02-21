@@ -46,12 +46,18 @@
 
 .seller-details ul {
   margin-bottom: 0;
+  padding-left: 8px;
+  list-style-type: none;
+}
+
+.seller-details i {
+  font-size: 10px;
 }
 
 .seller-details .sustainability {
   font-size: 12px;
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   color: $dark-green;
 }
 
