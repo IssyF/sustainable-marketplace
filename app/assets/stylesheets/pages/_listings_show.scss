@@ -8,7 +8,6 @@
 }
 
 .listing-info h4 {
-  margin-top: 16px;
   font-size: 18px;
 }
 
@@ -30,10 +29,15 @@
   // height: 400px;
   object-fit: cover;
   height: 80vh;
+  margin-bottom: 8px;
 }
 
 .listing-show .key-info {
   display: block;
+}
+
+.listing-show .key-info h5 {
+  color: $dark-green;
 }
 
 .seller-details {
@@ -41,9 +45,24 @@
 }
 
 .seller-details ul {
+  margin-bottom: 0;
+}
+
+.seller-details .sustainability {
   font-size: 12px;
   margin: 0;
   margin-bottom: 8px;
+  color: $dark-green;
+}
+
+.seller-details a {
+  color: $pink;
+  text-decoration: none;
+}
+
+.seller-details a:hover {
+  opacity: 90%;
+  transition: 0.2s;
 }
 
 @media(max-width: 992px) {
