@@ -1,9 +1,12 @@
 .button {
-  background-color: $dark-green;
+  background-color: $pink;
   color: white;
   padding: 4px 16px;
   box-shadow: none;
   border: none;
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 16px;
 }
 
 .button:hover {
