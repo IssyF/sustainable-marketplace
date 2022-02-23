@@ -1,11 +1,11 @@
 <div class="container search">
-  <h2 class="page-title">Search all items</h2>
+  <%# <h2 class="page-title">Search all items</h2> %>
 
   <%= form_tag listings_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Search"
+      placeholder: "Search all items"
     %>
     <%= button_tag :submit, class:"search-button" do %>
       <i class="fas fa-search"></i>

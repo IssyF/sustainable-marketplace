@@ -18,11 +18,19 @@
   display: flex;
 }
 
+.search form input {
+  margin: 16px 0;
+  height: 30px;
+  font-size: 14px;
+}
+
 .search-button {
-  border: none;
-  background-color: $light-pink;
+  border: 1px solid $dark-green;
+  background-color: $white;
   color: $dark-green;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
+  height: 30px;
+  margin: 16px 0;
   margin-left: -3px;
 }
