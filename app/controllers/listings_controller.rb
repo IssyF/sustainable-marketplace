@@ -1,6 +1,33 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, except: [:new, :create, :update]
 
+  def index
+    if params[:query].present?
+      @listings = Listing.search_by_details(params[:query])
+    else
+      @listings = Listing.all
+    end
+  end
+
+  def show
+    @listing = Listing.find(params[:id])
+  end
+
+  def new
+    @listing = Listing.new
+  end
+
+  def create
+    @listing = Listing.new(listing_params)
+    @listing.save
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+  end
+
+  # categories - non CRUD methods - could refactor category & subcategory listings
+
   def new_in
     shuffled_listings = Listing.all.shuffle
     @listings = shuffled_listings.first(15)
@@ -40,27 +67,6 @@ class ListingsController < ApplicationController
 
   def accessories
     @listings = Listing.where(category: "accessories")
-  end
-
-  def index
-    @listings = Listing.all
-  end
-
-  def show
-    @listing = Listing.find(params[:id])
-  end
-
-  def new
-    @listing = Listing.new
-  end
-
-  def create
-    @listing = Listing.new(listing_params)
-    @listing.save
-  end
-
-  def update
-    @listing = Listing.find(params[:id])
   end
 
   private

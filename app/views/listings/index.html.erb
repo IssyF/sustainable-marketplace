@@ -1,6 +1,21 @@
 <div class="container search">
   <h2 class="page-title">Search all items</h2>
 
+  <%= form_tag listings_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search"
+    %>
+    <%= button_tag :submit, class:"search-button" do %>
+      <i class="fas fa-search"></i>
+    <% end %>
+  <% end %>
+
   <%= render 'shared/listing_card', collection: @listings %>
+  <% if @listings.empty? %>
+    <p>Sorry no items found, sellers are constantly adding new items so please check back soon.</p>
+    <%= link_to "Back to all items", listings_path, class:"search-again" %>
+  <% end %>
 
 </div>

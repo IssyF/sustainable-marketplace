@@ -1,0 +1,28 @@
+.search-again {
+  color: $pink;
+  text-decoration: none;
+}
+
+.search-again:hover {
+  color: $pink;
+  opacity: 90%;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.search p {
+  font-size: 12px;
+}
+
+.search form {
+  display: flex;
+}
+
+.search-button {
+  border: none;
+  background-color: $light-pink;
+  color: $dark-green;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  margin-left: -3px;
+}
