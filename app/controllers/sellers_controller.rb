@@ -5,6 +5,25 @@ class SellersController < ApplicationController
     @seller = Seller.find(params[:id])
   end
 
+  def new
+    @seller = Seller.new
+  end
+
+  def create
+    @seller = Seller.new(seller_params)
+    @seller.user = current_user
+    if @seller.save!
+      redirect_to seller_home_path
+    else
+      render :new
+    end
+  end
+
+  def seller_home
+    @seller = current_user.seller
+    @listings = Listing.where(seller: @seller)
+  end
+
   def bam
     seller = Seller.find_by_shop_name("BAM")
     @listings = Listing.where(seller: seller)
@@ -18,5 +37,11 @@ class SellersController < ApplicationController
   def before_july
     seller = Seller.find_by_shop_name("Before July")
     @listings = Listing.where(seller: seller)
+  end
+
+  private
+
+  def seller_params
+    params.require(:seller).permit(:user, :shop_name, :shop_description)
   end
 end

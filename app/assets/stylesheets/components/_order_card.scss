@@ -1,0 +1,50 @@
+.order-card {
+  border: none;
+  height: 160px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.order-card img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.order-card-infos {
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.order-card-infos .size-price {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 24px;
+}
+
+.order-card-infos h5 {
+  font-size: 14px;
+}
+
+.order-card-infos p {
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+.order-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+@media(max-width: 992px) {
+  .order-cards {
+    grid-template-columns: 1fr;
+  }
+}

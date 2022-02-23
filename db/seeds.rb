@@ -2,6 +2,7 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 puts "Deleting all data..."
+Order.destroy_all
 Listing.destroy_all
 Seller.destroy_all
 Buyer.destroy_all

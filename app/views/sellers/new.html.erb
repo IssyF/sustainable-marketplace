@@ -1,0 +1,15 @@
+<div class="container seller-new">
+  <h2 class="page-title">Create your seller profile</h2>
+
+  <h5>Add your shop details:</h5>
+  <%= form_for(@seller) do |f| %>
+    <%= f.label :shop_name %>
+    <%= f.text_field :shop_name %>
+    <br>
+    <%= f.label :shop_description %>
+    <%= f.text_field :shop_description %>
+    <br>
+    <%= f.submit 'Submit', class:"button" %>
+  <% end %>
+
+</div>

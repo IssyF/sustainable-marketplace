@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get 'profile', to: 'users#profile'
+  get 'profile', to: 'buyers#profile'
   get 'seller_home', to: 'sellers#seller_home'
   get 'pages', to: 'pages#about_us'
 

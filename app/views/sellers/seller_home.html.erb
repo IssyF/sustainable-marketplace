@@ -1,0 +1,39 @@
+<div class="container seller-home">
+  <h2 class="page-title">Seller Homepage</h2>
+
+  <h3>My Details</h3>
+
+    <div class="seller-details">
+      <div class="seller-detail">
+        <p>Shop Name: <%= @seller.shop_name %></p>
+        <i class="far fa-edit"></i>
+      </div>
+      <div class="seller-detail">
+        <p>Shop Description: <%= @seller.shop_description %> </p>
+        <i class="far fa-edit"></i>
+      </div>
+
+
+    </div>
+
+  <%# my details with edit %>
+
+  <h3>My Listings</h3>
+  <div class="listings">
+    <% if @listings.empty? %>
+      <p>You haven't listed any items yet.</p>
+    <% else %>
+      <%= render 'shared/listing_card', collection: @listings %>
+    <% end %>
+
+    <%= link_to "Add a new listing", new_seller_listing_path(@seller) %>
+  </div>
+
+
+  <h3>My Orders</h3>
+
+  <%# my orders %>
+
+
+
+</div>

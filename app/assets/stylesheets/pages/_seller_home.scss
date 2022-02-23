@@ -1,0 +1,40 @@
+.seller-home h3 {
+  font-size: 20px;
+  color: $dark-green;
+}
+
+.seller-home h4 {
+  font-size: 16px;
+}
+
+.seller-home p {
+  font-size: 12px;
+}
+
+.seller-home .seller-details {
+  margin-bottom: 24px;
+}
+
+.seller-home a {
+  color: $pink;
+  text-decoration: none;
+}
+
+.seller-home a:hover {
+  opacity: 90%;
+  transition: 0.2s;
+}
+
+.seller-home .seller-details i {
+  margin-left: 8px;
+  font-size: 14px;
+  color: $pink;
+}
+
+.seller-home .seller-details .seller-detail {
+  display: flex;
+}
+
+.seller-home .listings {
+  margin-bottom: 24px;
+}

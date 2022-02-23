@@ -1,0 +1,51 @@
+<div class="container profile">
+  <h2 class="page-title">Hello, <%= current_user.username %>!</h2>
+
+  <h3>My Details</h3>
+  <div class="buyer-details">
+    <%# edit in line %>
+    <div class="buyer-detail">
+      <p>Email: <%= current_user.email %></p>
+      <i class="far fa-edit"></i>
+    </div>
+    <div class="buyer-detail">
+      <p>Password: ********** </p>
+      <i class="far fa-edit"></i>
+    </div>
+    <div class="buyer-detail">
+      <p>Shipping Address: <%= @buyer.address %> </p>
+      <i class="far fa-edit"></i>
+    </div>
+
+    <%# if a seller go to seller profile, otherwise: %>
+    <% if current_user.seller.nil? %>
+      <%= link_to "Become a seller", new_seller_path %>
+    <% else %>
+      <%= link_to "Go to my seller homepage", seller_home_path %>
+    <% end %>
+  </div>
+
+  <h3>My Orders</h3>
+
+  <%# Current orders then view all button - add with stimulus %>
+  <h4>Displaying <%= @orders.count %> orders</h4>
+  <div class="order-cards">
+    <% @orders.each do |order| %>
+      <div class="order-card">
+          <%= cl_image_tag order.listing.photo.key %>
+          <div class="order-card-infos">
+            <% if (order.created_at.to_date + 3) > Date.today %>
+              <strong><p>Estimated delivery date <%= (order.created_at.to_date + 3).strftime("%d %b %Y") %></p></strong>
+            <% else %>
+              <strong><p>Delivered on <%= (order.created_at.to_date + 3).strftime("%d %b %Y") %></p></strong>
+            <% end %>
+            <p>1 x <%= order.listing.title %> - <%= order.listing.size %></p>
+            <p><%= humanized_money_with_symbol order.amount %></p>
+            <p>Order date: <%= order.created_at.to_date.strftime("%d %b %Y") %></p>
+            <p>Order number: <%= order.id %></p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

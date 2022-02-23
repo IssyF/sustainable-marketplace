@@ -13,6 +13,11 @@ class BuyersController < ApplicationController
     end
   end
 
+  def profile
+    @buyer = current_user.buyer
+    @orders = @buyer.orders.order(created_at: :desc)
+  end
+
   private
 
   def buyer_params
