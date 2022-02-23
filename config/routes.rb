@@ -18,11 +18,10 @@ Rails.application.routes.draw do
       get :before_july
       get :molby
     end
-    resources :listings, only: [ :new, :create ]
     resources :sustainability_practices, only: [ :new, :create, :edit, :update ]
   end
 
-  resources :listings, only: [ :index, :show, :edit, :update, :destroy] do
+  resources :listings, only: [ :new, :create, :index, :show, :edit, :update, :destroy] do
     collection do
       # featured on home page
       get :new_in

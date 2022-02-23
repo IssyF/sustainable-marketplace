@@ -16,24 +16,22 @@
 
     </div>
 
-  <%# my details with edit %>
+  <%# add edit details and listings, delete listings functionality %>
 
-  <h3>My Listings</h3>
+  <h3>My Listings (<%= @listings.count %>)</h3>
   <div class="listings">
+    <strong><%= link_to "List a new item", new_listing_path(@seller), class:"add-listing" %></strong>
     <% if @listings.empty? %>
       <p>You haven't listed any items yet.</p>
     <% else %>
       <%= render 'shared/listing_card', collection: @listings %>
     <% end %>
 
-    <%= link_to "Add a new listing", new_seller_listing_path(@seller) %>
   </div>
 
 
   <h3>My Orders</h3>
-
-  <%# my orders %>
-
-
+  <div class="orders">
+  </div>
 
 </div>

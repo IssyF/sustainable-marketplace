@@ -19,7 +19,12 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
-    @listing.save
+    @listing.seller = current_user.seller
+    if @listing.save!
+      redirect_to seller_home_path
+    else
+      render :new
+    end
   end
 
   def update

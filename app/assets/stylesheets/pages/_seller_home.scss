@@ -15,12 +15,13 @@
   margin-bottom: 24px;
 }
 
-.seller-home a {
+.seller-home .add-listing {
   color: $pink;
   text-decoration: none;
+  font-size: 14px;
 }
 
-.seller-home a:hover {
+.seller-home .add-listing:hover {
   opacity: 90%;
   transition: 0.2s;
 }
@@ -35,6 +36,6 @@
   display: flex;
 }
 
-.seller-home .listings {
+.seller-home .listings, .orders {
   margin-bottom: 24px;
 }
