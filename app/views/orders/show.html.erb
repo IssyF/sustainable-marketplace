@@ -1,11 +1,15 @@
-<div class="container">
-    <div>
-      <%= cl_image_tag @order.listing.photo.key, width: '100%' %>
-    </div>
-    <h2 class="page-title">Order number: <%= @order.id %></h2>
+<div class="container order-show">
+  <h2 class="page-title">Order Confirmation</h2>
+  <div>
+    <%= cl_image_tag @order.listing.photo.key, width: '100%' %>
+  </div>
+  <div class="order-details">
+    <h5>Order number: <%= @order.id %></h5>
     <p>Status: <%= @order.state %></p>
     <p>Order date: <%= @order.created_at.to_date.strftime("%d %b %Y") %></p>
-    <p>1 x <%= @order.listing.title %> - <%= @order.listing.size %></p>
+    <p><%= @order.listing.title %> - <%= @order.listing.size %></p>
     <p>Total: <%= humanized_money_with_symbol @order.amount %></p>
+    <p>Sold by <%= @order.listing.seller.shop_name %></p>
     <em><p>Estimated delivery in <strong>3-5 business days</strong></p></em>
+  </div>
 </div>

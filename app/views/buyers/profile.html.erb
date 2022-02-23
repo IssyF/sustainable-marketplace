@@ -9,7 +9,7 @@
       <i class="far fa-edit"></i>
     </div>
     <div class="buyer-detail">
-      <p>Password: ********** </p>
+      <p>Password: ******* </p>
       <i class="far fa-edit"></i>
     </div>
     <div class="buyer-detail">
@@ -34,12 +34,13 @@
       <div class="order-card">
           <%= cl_image_tag order.listing.photo.key %>
           <div class="order-card-infos">
-            <% if (order.created_at.to_date + 3) > Date.today %>
-              <strong><p>Estimated delivery date <%= (order.created_at.to_date + 3).strftime("%d %b %Y") %></p></strong>
+            <% if (order.created_at.to_date + 5) > Date.today %>
+              <strong><p>Estimated delivery date <%= (order.created_at.to_date + 5).strftime("%d %b %Y") %></p></strong>
             <% else %>
-              <strong><p>Delivered on <%= (order.created_at.to_date + 3).strftime("%d %b %Y") %></p></strong>
+              <strong><p>Delivered on <%= (order.created_at.to_date + 5).strftime("%d %b %Y") %></p></strong>
             <% end %>
-            <p>1 x <%= order.listing.title %> - <%= order.listing.size %></p>
+            <p><%= order.listing.title %> - <%= order.listing.size %></p>
+            <p>Sold by <%= order.listing.seller.shop_name %></p>
             <p><%= humanized_money_with_symbol order.amount %></p>
             <p>Order date: <%= order.created_at.to_date.strftime("%d %b %Y") %></p>
             <p>Order number: <%= order.id %></p>

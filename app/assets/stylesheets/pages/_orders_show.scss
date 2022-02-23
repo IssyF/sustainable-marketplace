@@ -1,0 +1,16 @@
+.order-show img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.order-show .order-details h5 {
+  font-size: 16px;
+  color: $dark-green;
+}
+
+.order-show .order-details p {
+  font-size: 12px;
+  margin: 4px;
+}
