@@ -497,7 +497,7 @@ User.create!(
 )
 Seller.create!(
   shop_name: "Damson Madder",
-  shop_description: "We like to do things differently, to challenge the status quo",
+  shop_description: "Find the perfect long lasting outfit. We like to do things differently, to challenge the status quo",
   user: User.last
 )
 puts "Adding listings for seller 7..."
@@ -567,4 +567,78 @@ Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images
 )
 Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/kushla.jpg')), filename: 'kushla.jpg')
 
-puts "Seven sellers created with listings"
+# seller number 8
+User.create!(
+  username: "tala",
+  email: "tala@test.com",
+  password: "123123"
+)
+Seller.create!(
+  shop_name: "TALA",
+  shop_description: "TALA is sustainable style without compromise. Activewear pieces everyone can feel good in",
+  user: User.last
+)
+puts "Adding listings for seller 8..."
+Listing.create!(
+  seller: Seller.last,
+  title: "Skinluxe High Waisted Cycling Shorts - Khaki",
+  category: "activewear",
+  subcategory: "shorts",
+  price: 40,
+  size: "XS",
+  description: "The perfect cycling shorts for lounging, lifting and living life. With super flattering, sweet-heart contouring these shorts are designed to stay up. Featuring a discreet and secure zip pocket for keeping your phone safe during your workouts, these versatile and high-performing cycling shorts pair perfectly with just about anything in your workout and going out wardrobe. Sustainably made from 76% recycled nylon and 24% LYCRA® SPORT."
+)
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/tala/shorts.jpg')), filename: 'shorts.jpg')
+Listing.create!(
+  seller: Seller.last,
+  title: "Zinnia Seamless Legging - Iris Purple",
+  category: "activewear",
+  subcategory: "leggings",
+  price: 42,
+  size: "M",
+  description: "Your go-to, everyday legging, purposefully created with a versatile and multi-functional design. Crafted to provide the perfect balance between compression and stretch, holding you in place throughout any workout. Expect subtle contouring with our sweetheart waistband for the perfect flattering fit and comfort and shaping you’ve never felt before. Sustainably made from 92% recycled polyamide and 8% elastane."
+)
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/tala/zinnia.jpg')), filename: 'zinnia.jpg')
+Listing.create!(
+  seller: Seller.last,
+  title: "Stark Seamless Racerback Sports Bra - Iris Purple",
+  category: "activewear",
+  subcategory: "sports bras",
+  price: 32,
+  size: "L",
+  description: "Introducing the Stark Logo Seamless Racer Back Bra - the bra that does it all. Stark provides the perfect balance of functional and flattering, allowing you to move effortlessly whilst keeping you secure and comfortable during your workout. Pair with the Zinnia Seamless Legging for effortless co-ord chic whether at the gym or out and about. Sustainably made from 92% recycled polyamide and 8% elastane."
+)
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/tala/stark.jpg')), filename: 'stark.jpg')
+Listing.create!(
+  seller: Seller.last,
+  title: "Reform Seamless Short Sleeve Crop Top - Black",
+  category: "activewear",
+  subcategory: "gym tops",
+  price: 35,
+  size: "S",
+  description: "Super cute gym fit? Check. Stylish crop top? Check. Introducing the Reform Logo Seamless Short Sleeve Crop Top, your new go-to crop top for the ultimate flattering fit. Perfect for workouts or styling up with your favourite pair of jeans. Sustainably made from 92% recycled polyamide and 8% elastane."
+)
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/tala/reform.jpg')), filename: 'reform.jpg')
+Listing.create!(
+  seller: Seller.last,
+  title: "Skinluxe Built-in Supprt Racerback Vest - Khaki",
+  category: "activewear",
+  subcategory: "shorts",
+  price: 36,
+  size: "XL",
+  description: "Introducing the game-changing vest with built-in support and delicate racerback design. Ready to move whenever you are, this vest is your throw-on-and-go workout partner. There’s no need to wear a sports bra - this vest really does have it all. Sustainably made with 76% recycled nylon and 24% LYCRA® SPORT."
+)
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/tala/vest.jpg')), filename: 'vest.jpg')
+Listing.create!(
+  seller: Seller.last,
+  title: "Aster Seamless Long Sleeve Crop Top - Sage Green",
+  category: "activewear",
+  subcategory: "gym tops",
+  price: 37,
+  size: "M",
+  description: "Our best-selling, long sleeve, zip-up crop top is ready and raring to go. With lockable zip and high-compression, sweat-wicking, and antibacterial fabric, you can work out with confidence. Sustainably made from 92% recycled polyamide and 8% elastane."
+)
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/tala/shorts.jpg')), filename: 'shorts.jpg')
+
+
+puts "Eight sellers created with listings"
