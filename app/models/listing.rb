@@ -12,7 +12,7 @@ class Listing < ApplicationRecord
   validates :size, presence: true, inclusion: { in: %w[XS S M L UK6 UK8 UK10 UK12 UK14 UK16 UK18 UK20 UK3/EU36 UK4/EU37 UK5/EU38 UK6/EU39 UK7/EU40 UK8/EU41 UK9/EU42 One\ Size], message: "not a valid size" }
   validates :description, presence: true, length: { in: 3..1000 }
   validates :title, presence: true
-  validates :photo, presence:true
+  # validates :photo, presence: true
 
   include PgSearch::Model
   pg_search_scope :search_by_details,

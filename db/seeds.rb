@@ -505,7 +505,7 @@ Listing.create!(
   seller: Seller.last,
   title: "Rita Jacket",
   category: "outerwear",
-  subcategory: "jacket",
+  subcategory: "jackets",
   price: 95,
   size: "UK16",
   description: "Made from 80% cotton and 20% recycled cotton. The denim used for this jacket is certified organic and recycled and has achieved a low impact EIM score. Made in Turkey."
@@ -520,7 +520,8 @@ Listing.create!(
   size: "UK12",
   description: "Made from 80% cotton and 20% recycled cotton. The denim used for these jeans is certified organic and recycled and has achieved a low impact EIM score. Made in Turkey."
 )
-Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/ritajeans.jpg')), filename: 'ritajeans.jpg')Listing.create!(
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/ritajeans.jpg')), filename: 'ritajeans.jpg')
+Listing.create!(
   seller: Seller.last,
   title: "Maude Jacquard Floral Trousers",
   category: "bottoms",
@@ -529,7 +530,8 @@ Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images
   size: "UK6",
   description: "Made from 60% recycled polyester, 31% viscose, 8% polyamide and 1% elastane."
 )
-Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/maude.jpg')), filename: 'maude.jpg')Listing.create!(
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/maude.jpg')), filename: 'maude.jpg')
+Listing.create!(
   seller: Seller.last,
   title: "Handmade Crochet Shopper Bag",
   category: "accessories",
@@ -538,7 +540,8 @@ Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images
   size: "One Size",
   description: "Handmade crochet shopper in lilac. One of a kind. Dry clean only."
 )
-Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/crochetbag.jpg')), filename: 'crochetbag.jpg')Listing.create!(
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/crochetbag.jpg')), filename: 'crochetbag.jpg')
+Listing.create!(
   seller: Seller.last,
   title: "Penny Crinkle Check Collar Blouse",
   category: "tops",
@@ -547,7 +550,8 @@ Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images
   size: "UK8",
   description: "Made from 50% recycled polyester."
 )
-Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/ritajacket.jpg')), filename: 'ritajacket.jpg')Listing.create!(
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/ritajacket.jpg')), filename: 'ritajacket.jpg')
+Listing.create!(
   seller: Seller.last,
   title: "Mabel 70s Marble Logo Tee",
   category: "tops",
@@ -556,7 +560,8 @@ Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images
   size: "UK10",
   description: "Made from 50% recycled cotton."
 )
-Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/mabel.jpg')), filename: 'mabel.jpg')Listing.create!(
+Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/mabel.jpg')), filename: 'mabel.jpg')
+Listing.create!(
   seller: Seller.last,
   title: "Kushla Floral Organic Cotton Maxi Dress",
   category: "dresses",
@@ -625,7 +630,7 @@ Listing.create!(
   category: "activewear",
   subcategory: "shorts",
   price: 36,
-  size: "XL",
+  size: "L",
   description: "Introducing the game-changing vest with built-in support and delicate racerback design. Ready to move whenever you are, this vest is your throw-on-and-go workout partner. There’s no need to wear a sports bra - this vest really does have it all. Sustainably made with 76% recycled nylon and 24% LYCRA® SPORT."
 )
 Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/tala/vest.jpg')), filename: 'vest.jpg')
