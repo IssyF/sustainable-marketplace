@@ -25,10 +25,9 @@
     <% end %>
   </div>
 
-  <h3>My Orders</h3>
+  <h3>My Orders (<%= @orders.count %>)</h3>
 
   <%# Current orders then view all button - add with stimulus %>
-  <h4>Displaying <%= @orders.count %> orders</h4>
   <div class="order-cards">
     <% @orders.each do |order| %>
       <div class="order-card">

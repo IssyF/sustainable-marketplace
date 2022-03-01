@@ -1,15 +1,23 @@
 <div class="container seller-home">
   <h2 class="page-title">Seller Homepage</h2>
 
+  <strong>
+    <%= link_to seller_path(@seller), class:"add-listing" do %>
+      <p>See customer view of <%= @seller.shop_name %>'s page</p>
+    <% end %>
+  </strong>
+
   <h3>My Details</h3>
 
     <div class="seller-details">
       <div class="seller-detail">
         <p>Shop Name: <%= @seller.shop_name %></p>
+        <%# MAKE THIS A LINK TO EDIT %>
         <i class="far fa-edit"></i>
       </div>
       <div class="seller-detail">
         <p>Shop Description: <%= @seller.shop_description %> </p>
+         <%# MAKE THIS A LINK TO EDIT %>
         <i class="far fa-edit"></i>
       </div>
     </div>
@@ -19,10 +27,28 @@
   <h3>My Listings (<%= @listings.count %>)</h3>
   <div class="listings">
     <strong><%= link_to "List a new item", new_listing_path(@seller), class:"add-listing" %></strong>
+
     <% if @listings.empty? %>
       <p>You haven't listed any items yet.</p>
     <% else %>
-      <%= render 'shared/listing_card', collection: @listings %>
+      <div class="order-cards">
+        <% @listings.each do |listing| %>
+          <div class="order-card">
+              <%= cl_image_tag listing.photo.key %>
+              <div class="order-card-infos">
+                <strong><p><%= listing.title %> - <%= listing.size %></p></strong>
+                <p class="description"><%= listing.description %></p>
+                <p>£<%= listing.price.round() %></p>
+                <em>
+                  <p class="dates">Last updated on <%= listing.updated_at.to_date.strftime("%d %b %Y") %></p>
+                </em>
+              <%# make these links %>
+              <i class="far fa-trash-alt delete"></i>
+              <i class="far fa-edit edit"></i>
+              </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
 
   </div>
@@ -33,13 +59,25 @@
     <% if @sales.empty? %>
       <p>You haven't sold any items yet.</p>
     <% else %>
-      <%= render 'shared/listing_card', collection: @sales %>
+      <p>Total sales: £<%= @sales_value.round() %></p>
+      <div class="order-cards">
+        <% @sales.each do |listing| %>
+          <div class="order-card">
+              <%= cl_image_tag listing.photo.key %>
+              <div class="order-card-infos">
+                <strong><p><%= listing.title %> - <%= listing.size %></p></strong>
+                <p>Sold to <%= listing.order.buyer.user.username %></p>
+                <p>Dispatch address: <%= listing.order.buyer.address %></p>
+                <p>£<%= listing.price.round() %></p>
+                <em>
+                  <p class="dates">Sold on <%= listing.order.updated_at.to_date.strftime("%d %b %Y") %></p>
+                </em>
+              </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
-  <strong>
-    <%= link_to seller_path(@seller), class:"add-listing" do %>
-      <p>See customer view of <%= @seller.shop_name %>'s page</p>
-    <% end %>
-  </strong>
+
 </div>

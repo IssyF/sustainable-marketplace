@@ -39,3 +39,36 @@
 .seller-home .listings, .orders {
   margin-bottom: 24px;
 }
+
+.seller-home .order-cards {
+  margin-top: 8px;
+}
+
+.seller-home .order-card .description {
+  font-size: 9px;
+}
+
+.seller-home .order-card .dates {
+  opacity: 80%;
+  font-size: 10px;
+}
+
+.seller-home .order-card {
+  position: relative;
+}
+
+.seller-home .order-card i {
+  position: absolute;
+  // right: 0;
+  top: 8px;
+  font-size: 14px;
+  color: $pink;
+}
+
+.seller-home .edit {
+  right: 40px
+}
+
+.seller-home .delete {
+  right: 16px
+}

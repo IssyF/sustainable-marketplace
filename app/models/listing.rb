@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
   belongs_to :seller
-  has_many :orders
+  has_one :order
   has_one_attached :photo
 
   monetize :price_cents

@@ -24,6 +24,10 @@ class SellersController < ApplicationController
     @seller = current_user.seller
     @listings = Listing.where(seller: @seller, sold: false)
     @sales = Listing.where(seller: @seller, sold: true)
+    @sales_value = 0
+    @sales.each do |sale|
+      @sales_value += sale.price
+    end
   end
 
   def bam
