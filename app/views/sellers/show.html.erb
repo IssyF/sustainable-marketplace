@@ -1,11 +1,13 @@
 <div class="container feature">
   <h2 class="page-title"><%= @seller.shop_name %></h2>
 
+  <p><%= @seller.shop_description %></p>
+
   <%# about them (description) %>
   <%# sustainability values %>
   <%# listings %>
   <%# contact them %>
 
-  <%# <%= render 'shared/listing_card', collection: @listings %>
+  <%= render 'shared/listing_card', collection: @listings %>
 
 </div>

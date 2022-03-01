@@ -3,6 +3,7 @@ class SellersController < ApplicationController
 
   def show
     @seller = Seller.find(params[:id])
+    @listings = Listing.where(seller: @seller, sold: false)
   end
 
   def new
