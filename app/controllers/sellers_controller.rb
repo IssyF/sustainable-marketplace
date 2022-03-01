@@ -21,7 +21,8 @@ class SellersController < ApplicationController
 
   def seller_home
     @seller = current_user.seller
-    @listings = Listing.where(seller: @seller)
+    @listings = Listing.where(seller: @seller, sold: false)
+    @sales = Listing.where(seller: @seller, sold: true)
   end
 
   def bam
