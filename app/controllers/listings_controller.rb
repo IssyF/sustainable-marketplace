@@ -3,9 +3,9 @@ class ListingsController < ApplicationController
 
   def index
     if params[:query].present?
-      @listings = Listing.search_by_details(params[:query])
+      @listings = Listing.search_by_details(params[:query]).where(sold: false)
     else
-      @listings = Listing.all
+      @listings = Listing.where(sold: false)
     end
   end
 
@@ -34,44 +34,44 @@ class ListingsController < ApplicationController
   # categories - non CRUD methods - could refactor category & subcategory listings
 
   def new_in
-    shuffled_listings = Listing.all.shuffle
+    shuffled_listings = Listing.where(sold: false).shuffle
     @listings = shuffled_listings.first(15)
   end
 
   def activewear
-    @listings = Listing.where(category: "activewear")
+    @listings = Listing.where(category: "activewear", sold: false)
   end
 
   def denim
-    @listings = Listing.where(subcategory: "jeans")
+    @listings = Listing.where(subcategory: "jeans", sold: false)
   end
 
   def jackets
-    @listings = Listing.where(category: "outerwear")
+    @listings = Listing.where(category: "outerwear", sold: false)
   end
 
   def day_dresses
-    @listings = Listing.where(subcategory: "day dresses")
+    @listings = Listing.where(subcategory: "day dresses", sold: false)
   end
 
   def dresses
-    @listings = Listing.where(category: "dresses")
+    @listings = Listing.where(category: "dresses", sold: false)
   end
 
   def tops
-    @listings = Listing.where(category: "tops")
+    @listings = Listing.where(category: "tops", sold: false)
   end
 
   def trousers
-    @listings = Listing.where(subcategory: "trousers")
+    @listings = Listing.where(subcategory: "trousers", sold: false)
   end
 
   def skirts
-    @listings = Listing.where(subcategory: "skirts")
+    @listings = Listing.where(subcategory: "skirts", sold: false)
   end
 
   def accessories
-    @listings = Listing.where(category: "accessories")
+    @listings = Listing.where(category: "accessories", sold: false)
   end
 
   private
