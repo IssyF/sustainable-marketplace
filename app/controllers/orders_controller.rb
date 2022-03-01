@@ -3,6 +3,8 @@ class OrdersController < ApplicationController
 
   def create
     listing = Listing.find(params[:listing_id])
+    listing.update!(sold: true)
+
     order  = Order.create!(
       listing: listing,
       buyer: current_user.buyer,

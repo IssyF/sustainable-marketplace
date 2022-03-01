@@ -571,6 +571,7 @@ Listing.create!(
   description: "Maxi dress with tie back detail. Made from 100% organic cotton."
 )
 Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/damson/kushla.jpg')), filename: 'kushla.jpg')
+puts "Seller 7 listings created."
 
 # seller number 8
 User.create!(
@@ -644,6 +645,6 @@ Listing.create!(
   description: "Our best-selling, long sleeve, zip-up crop top is ready and raring to go. With lockable zip and high-compression, sweat-wicking, and antibacterial fabric, you can work out with confidence. Sustainably made from 92% recycled polyamide and 8% elastane."
 )
 Listing.last.photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/tala/shorts.jpg')), filename: 'shorts.jpg')
-
+puts "Seller 8 listings created."
 
 puts "Eight sellers created with listings"
