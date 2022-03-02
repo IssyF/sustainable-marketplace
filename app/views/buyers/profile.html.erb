@@ -21,7 +21,7 @@
     <% if current_user.seller.nil? %>
       <%= link_to "Become a seller", new_seller_path %>
     <% else %>
-      <%= link_to "Go to my seller homepage", seller_home_path %>
+      <strong><%= link_to "Go to my seller homepage", seller_home_path %></strong>
     <% end %>
   </div>
 
