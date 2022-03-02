@@ -15,15 +15,24 @@
   margin-bottom: 24px;
 }
 
-.seller-home .add-listing {
+.seller-home .seller-home-link {
   color: $pink;
   text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.seller-home .seller-home-link h5 {
   font-size: 14px;
 }
 
-.seller-home .add-listing:hover {
-  opacity: 90%;
+.seller-home .seller-home-link:hover {
   transition: 0.2s;
+  opacity: 90%;
+}
+
+.seller-home .add-listing:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .seller-home .seller-details i {

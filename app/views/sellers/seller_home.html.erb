@@ -2,8 +2,8 @@
   <h2 class="page-title">Seller Homepage</h2>
 
   <strong>
-    <%= link_to seller_path(@seller), class:"add-listing" do %>
-      <p>See customer view of <%= @seller.shop_name %>'s page</p>
+    <%= link_to seller_path(@seller), class:"seller-home-link" do %>
+      <h5>See customer view of <%= @seller.shop_name %>'s page</h5>
     <% end %>
   </strong>
 
@@ -26,7 +26,7 @@
 
   <h3>My Listings (<%= @listings.count %>)</h3>
   <div class="listings">
-    <strong><%= link_to "List a new item", new_listing_path(@seller), class:"add-listing" %></strong>
+    <strong><%= link_to "List a new item", new_listing_path(@seller), class:"button add-listing" %></strong>
 
     <% if @listings.empty? %>
       <p>You haven't listed any items yet.</p>
