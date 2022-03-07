@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'seller_home', to: 'sellers#seller_home'
   get 'pages', to: 'pages#about_us'
 
-  resources :buyers, only: [ :new, :create, :edit, :update ]
+  resources :buyers, only: [ :new, :create, :update ]
 
   resources :sellers do
     collection do

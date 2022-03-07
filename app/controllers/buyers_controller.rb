@@ -18,6 +18,15 @@ class BuyersController < ApplicationController
     @orders = @buyer.orders.order(created_at: :desc)
   end
 
+  def update
+    @buyer = Buyer.find(params[:id])
+    @buyer.update(buyer_params)
+
+    respond_to do |format|
+      format.html { redirect_to profile_path, notice: 'Details updated!' }
+    end
+  end
+
   private
 
   def buyer_params

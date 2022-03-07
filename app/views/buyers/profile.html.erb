@@ -2,10 +2,10 @@
   <h2 class="page-title">Hello, <%= current_user.username %>!</h2>
 
   <h3>My Details</h3>
-  <div class="buyer-details">
+  <div class="buyer-details" data-controller="edit-user">
     <%# edit in line %>
     <div class="buyer-detail">
-      <p>Email: <%= current_user.email %></p>
+      <p >Email: <%= current_user.email %></p>
       <i class="far fa-edit"></i>
     </div>
     <div class="buyer-detail">
@@ -13,8 +13,12 @@
       <i class="far fa-edit"></i>
     </div>
     <div class="buyer-detail">
-      <p>Shipping Address: <%= @buyer.address %> </p>
-      <i class="far fa-edit"></i>
+      <p data-edit-user-target="address">Shipping Address: <%= @buyer.address %> </p>
+      <i class="far fa-edit" data-edit-user-target="icon" data-action="click->edit-user#displayForm"></i>
+      <%= simple_form_for @buyer, html: { class: "d-none", data: { edit_user_target: "form", action: "submit->edit-user#update" } } do |f| %>
+        <%= f.input :address, label:'Shipping Address'  %>
+        <%= f.submit 'Update', class:"button" %>
+      <% end %>
     </div>
 
     <%# if a seller go to seller profile, otherwise: %>
