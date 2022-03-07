@@ -24,6 +24,7 @@ class BuyersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to profile_path, notice: 'Details updated!' }
+      format.json { head :no_content }
     end
   end
 

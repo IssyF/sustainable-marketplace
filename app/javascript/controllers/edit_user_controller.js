@@ -16,7 +16,7 @@ export default class extends Controller {
 
   update(event) {
     console.log("update event clicked")
-    event.preventDefault()
+    // event.preventDefault()
     const url = this.formTarget.action
     fetch(url, {
       method: "PATCH",
