@@ -20,6 +20,16 @@ class SellersController < ApplicationController
     end
   end
 
+  def update
+    @seller = Seller.find(params[:id])
+    @seller.update(seller_params)
+
+    respond_to do |format|
+      format.html { redirect_to seller_home_path, notice: 'Details updated!' }
+      format.json { head :no_content }
+    end
+  end
+
   def seller_home
     @seller = current_user.seller
     @listings = Listing.where(seller: @seller, sold: false)

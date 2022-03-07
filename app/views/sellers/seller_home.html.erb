@@ -9,16 +9,24 @@
 
   <h3>My Details</h3>
 
-    <div class="seller-details">
+    <div class="seller-details" data-controller="edit-seller">
       <div class="seller-detail">
-        <p>Shop Name: <%= @seller.shop_name %></p>
+        <p  data-edit-seller-target="name">Shop Name: <%= @seller.shop_name %></p>
         <%# MAKE THIS A LINK TO EDIT %>
-        <i class="far fa-edit"></i>
+        <i class="far fa-edit" data-edit-seller-target="nameIcon" data-action="click->edit-seller#displayNameForm"></i>
+        <%= simple_form_for @seller, html: { class: "d-none", data: { edit_seller_target: "nameForm", action: "submit->edit-seller#update" } } do |f| %>
+          <%= f.input :shop_name, label:'Shop Name:' %>
+          <%= f.submit 'Update', class:"button" %>
+        <% end %>
       </div>
       <div class="seller-detail">
-        <p>Shop Description: <%= @seller.shop_description %> </p>
+        <p  data-edit-seller-target="desc">Shop Description: <%= @seller.shop_description %> </p>
          <%# MAKE THIS A LINK TO EDIT %>
-        <i class="far fa-edit"></i>
+        <i class="far fa-edit" data-edit-seller-target="descIcon" data-action="click->edit-seller#displayDescForm"></i>
+        <%= simple_form_for @seller, html: { class: "d-none", data: { edit_seller_target: "descForm", action: "submit->edit-seller#update" } } do |f| %>
+          <%= f.input :shop_description, label:'Shop Description:' %>
+          <%= f.submit 'Update', class:"button" %>
+        <% end %>
       </div>
     </div>
 

@@ -6,17 +6,17 @@
     <%# edit in line %>
     <div class="buyer-detail">
       <p >Email: <%= current_user.email %></p>
-      <i class="far fa-edit"></i>
+      <%# <i class="far fa-edit"></i> %>
     </div>
-    <div class="buyer-detail">
-      <p>Password: ******* </p>
-      <i class="far fa-edit"></i>
-    </div>
+    <%# <div class="buyer-detail"> %>
+      <%# <p>Password: ******* </p> %>
+      <%# <i class="far fa-edit"></i> %>
+    <%# </div> %>
     <div class="buyer-detail">
       <p data-edit-user-target="address">Shipping Address: <%= @buyer.address %> </p>
       <i class="far fa-edit" data-edit-user-target="icon" data-action="click->edit-user#displayForm"></i>
       <%= simple_form_for @buyer, html: { class: "d-none", data: { edit_user_target: "form", action: "submit->edit-user#update" } } do |f| %>
-        <%= f.input :address, label:'Shipping Address'  %>
+        <%= f.input :address, label:'Shipping Address:'  %>
         <%= f.submit 'Update', class:"button" %>
       <% end %>
     </div>
