@@ -2,8 +2,8 @@
   <h2 class="page-title">Complete your profile...</h2>
 
   <h5>Add your shipping address:</h5>
-  <%= form_for(@buyer) do |f| %>
-    <%= f.text_field :address %>
+  <%= simple_form_for(@buyer) do |f| %>
+    <%= f.input :address %>
     <%= f.submit 'Complete' %>
   <% end %>
 
