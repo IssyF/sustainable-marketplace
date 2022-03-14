@@ -2,15 +2,6 @@
   <h2 class="page-title">List a New Item</h2>
 
   <h5>Add item details:</h5>
-  <%= simple_form_for(@listing) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :category, collection: %w[dresses tops outerwear bottoms shoes accessories activewear] %>
-    <%= f.input :subcategory, collection: ["evening dresses", "day dresses", "blouses", "tshirts", "camisoles", "knitwear", "coats", "jackets", "trousers", "jeans", "skirts", "shorts", "boots", "sandals", "trainers", "loafers", "jewellery", "scarves", "hair accessories", "bags", "leggings", "gym tops", "sports bras"] %>
-    <%= f.input :size, collection: %w[XS S M L UK6 UK8 UK10 UK12 UK14 UK16 UK18 UK20 UK3/EU36 UK4/EU37 UK5/EU38 UK6/EU39 UK7/EU40 UK8/EU41 UK9/EU42 One\ Size] %>
-    <%= f.input :price, label:'Price £ (between £3 and £200)' %>
-    <%= f.input :description, label:'Item description (including materials composition, washing instructions if applicable)' %>
-    <%= f.input :photo, as: :file, label:'Add a photo' %>
-    <%= f.submit 'Submit', class:"button" %>
-  <% end %>
+  <%= render "form", listing: @listing %>
 
 </div>

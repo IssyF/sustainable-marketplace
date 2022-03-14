@@ -6,7 +6,7 @@ class BuyersController < ApplicationController
   def create
     @buyer = Buyer.new(buyer_params)
     @buyer.user = current_user
-    if @buyer.save!
+    if @buyer.save
       redirect_to '/'
     else
       render :new

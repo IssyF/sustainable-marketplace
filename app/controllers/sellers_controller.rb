@@ -13,7 +13,7 @@ class SellersController < ApplicationController
   def create
     @seller = Seller.new(seller_params)
     @seller.user = current_user
-    if @seller.save!
+    if @seller.save
       redirect_to seller_home_path
     else
       render :new

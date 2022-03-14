@@ -20,7 +20,7 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.seller = current_user.seller
-    if @listing.save!
+    if @listing.save
       redirect_to seller_home_path
     else
       render :new
@@ -29,6 +29,12 @@ class ListingsController < ApplicationController
 
   def update
     @listing = Listing.find(params[:id])
+  end
+
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    redirect_to seller_home_path
   end
 
   # categories - non CRUD methods - could refactor category & subcategory listings

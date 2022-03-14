@@ -50,9 +50,10 @@
                 <em>
                   <p class="dates">Last updated on <%= listing.updated_at.to_date.strftime("%d %b %Y") %></p>
                 </em>
-              <%# make these links %>
-              <i class="far fa-trash-alt delete"></i>
-              <i class="far fa-edit edit"></i>
+                <%= link_to listing_path(listing), method: :delete, data: { confirm: "Are you sure you want to delete this item?" } do %>
+                  <i class="far fa-trash-alt delete"></i>
+                <% end %>
+                <i class="far fa-edit edit"></i>
               </div>
           </div>
         <% end %>
