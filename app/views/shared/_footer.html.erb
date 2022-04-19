@@ -8,18 +8,19 @@
       <i class="fab fa-twitter"></i>
     </div>
 
-    <h5><strong>Sign up</strong> to our newsletter and get 10% off.</h5>
+    <div data-controller="newsletter-form">
+      <h5><strong data-action="click->newsletter-form#unhide">Subscribe</strong> to our newsletter and get 10% off.</h5>
 
-    <div class="newsletter-form-popup">
-      <i class="fas fa-times"></i>
-      <form action="">
-        <p>Keep up with our news and latest seller additions.</p>
-        <p>All new subscribers get 10% off their first purchase.</p>
-        <input type="text" placeholder="Your email" name="email" required>
-        <button type="submit" class="newsletter-btn">Submit</button>
-      </form>
+      <div class="newsletter-form-popup d-none" data-newsletter-form-target="form">
+        <i class="fas fa-times" data-action="click->newsletter-form#close"></i>
+        <form action="">
+          <p>Keep up with our latest news and seller additions.</p>
+          <p>All new subscribers get 10% off their first purchase.</p>
+          <input type="text" placeholder="Your email" name="email" required>
+          <button type="submit" class="newsletter-btn">Submit</button>
+        </form>
+      </div>
     </div>
-
 
     <div class="footer-links">
       <%= link_to "About us", pages_path %>
