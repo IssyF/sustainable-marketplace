@@ -59,6 +59,9 @@ homepage a:hover {
 
 .homepage-carousels {
   margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 12px;
 }
 
 .carousel-item {
@@ -110,7 +113,7 @@ homepage a:hover {
   object-fit: cover;
   height: 100%;
   width: 100%;
-  filter: brightness(80%);
+  filter: brightness(75%);
 }
 
 .overlay-text {
@@ -123,7 +126,7 @@ homepage a:hover {
 }
 
 .overlay-text h3 {
-  color: white;
+  color: $light-green;
   text-shadow: 1px 1px $dark-green;
   font-size: 18px;
 }
