@@ -1,6 +1,7 @@
 .footer {
-  margin-bottom: 16px;
+  padding-bottom: 16px;
   text-align: center;
+  background-color: #f5faf7;
 }
 
 .footer .social-icons i {
@@ -9,7 +10,8 @@
 }
 
 .footer .social-icons i:hover {
-  opacity: 95%;
+  opacity: 90%;
+  cursor: pointer;
 }
 
 .footer h5 {
@@ -28,7 +30,7 @@
 
 .footer .footer-links a:hover {
   text-decoration: none;
-  opacity: 95%;
+  opacity: 90%;
 }
 
 .footer strong {
@@ -40,7 +42,7 @@
   opacity: 90%;
 }
 
-// footer pop up form css below - us JS to hide/unhide when the strong 'Sign up' is clicked
+// footer pop up form css below
 
 .newsletter-form-popup {
   border: 1px solid $pink;
