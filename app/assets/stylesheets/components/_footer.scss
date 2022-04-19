@@ -3,19 +3,13 @@
   text-align: center;
 }
 
-.footer .social-links i {
+.footer .social-icons i {
   color: $dark-green;
   margin: 0px 4px;
 }
 
-.footer .social-links i:hover {
+.footer .social-icons i:hover {
   opacity: 95%;
-}
-
-.footer .contact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .footer h5 {
@@ -27,9 +21,23 @@
   margin: 0;
 }
 
+.footer .footer-links a {
+  color: $pink;
+  margin: 0;
+}
+
+.footer .footer-links a:hover {
+  text-decoration: none;
+  opacity: 95%;
+}
+
 .footer strong {
   color: $pink;
   cursor: pointer;
+}
+
+.footer strong:hover {
+  opacity: 90%;
 }
 
 // footer pop up form css below - us JS to hide/unhide when the strong 'Sign up' is clicked

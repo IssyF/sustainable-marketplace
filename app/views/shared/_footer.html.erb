@@ -1,7 +1,7 @@
 <div class="footer">
   <hr>
   <div class="container">
-    <div class="social-links">
+    <div class="social-icons">
       <i class="fab fa-instagram"></i>
       <i class="fab fa-facebook-f"></i>
       <i class="fab fa-pinterest-p"></i>
@@ -22,11 +22,9 @@
 
 
     <div class="footer-links">
-      <p>About us</p>
-      <div class="contact">
-        <i class="far fa-envelope"></i>
-        <p>Contact us</p>
-      </div>
+      <%= link_to "About us", pages_path %>
+      <br>
+      <%= mail_to "mampan@test.com", "Contact us"%>
     </div>
 
   </div>
