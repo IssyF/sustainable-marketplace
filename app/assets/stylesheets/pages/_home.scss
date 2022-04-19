@@ -92,3 +92,58 @@ homepage a:hover {
 .carousel-caption p {
   color: $light-pink;
 }
+
+.homepage-video {
+  height: 300px;
+  width: 100%;
+  margin-bottom: 16px;
+  text-align: center;
+  position: relative;
+  opacity: 95%;
+}
+
+.homepage-video:hover {
+  opacity: 100%;
+}
+
+.homepage-video video {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  filter: brightness(80%);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 15%;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+}
+
+.overlay-text h3 {
+  color: white;
+  text-shadow: 1px 1px $dark-green;
+  font-size: 18px;
+}
+
+.new-in-cards {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  column-gap: 12px;
+}
+
+@media(max-width: 768px) {
+  .new-in-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .homepage-video {
+    height: 150px;
+  }
+
+  .homepage-carousels {
+    grid-template-columns: 1fr;
+  }
+}

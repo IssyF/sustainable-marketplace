@@ -1,16 +1,25 @@
 <div class="container homepage">
 
-    <div class="homepage-story" id="new-in">
-      <%= link_to new_in_listings_path do %>
-        <h2>New in</h2>
-        <p>Browse the latest drops from our sustainable sellers</p>
+    <div class="new-in-cards">
+      <div class="homepage-story" id="new-in">
+        <%= link_to new_in_listings_path do %>
+          <h2>New in</h2>
+          <p>Browse the latest drops from our sustainable sellers</p>
+        <% end %>
+      </div>
+
+      <%= link_to accessories_listings_path, class:"homepage-video" do %>
+        <%= video_tag "hat_video.mp4", autoplay: true, loop: true, muted: true, controls: false, playsinline: true %>
+        <div class="overlay-text">
+          <h3>Jump for joy, Spring accessories are here!</h3>
+        </div>
       <% end %>
     </div>
 
     <div class="homepage-story" id="activewear">
       <%= link_to activewear_listings_path do %>
         <h2>Focus On: Activewear</h2>
-        <p>Kick start your new year's resolution in style</p>
+        <p>Work out in style</p>
       <% end %>
     </div>
 
