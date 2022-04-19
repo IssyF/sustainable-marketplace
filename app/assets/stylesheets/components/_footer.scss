@@ -1,0 +1,85 @@
+.footer {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.footer .social-links i {
+  color: $dark-green;
+  margin: 0px 4px;
+}
+
+.footer .social-links i:hover {
+  opacity: 95%;
+}
+
+.footer .contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer h5 {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer strong {
+  color: $pink;
+  cursor: pointer;
+}
+
+// footer pop up form css below - us JS to hide/unhide when the strong 'Sign up' is clicked
+
+.newsletter-form-popup {
+  display: none;
+  border: 1px solid $pink;
+  padding: 16px;
+  position: relative;
+  margin: 16px 0px;
+}
+
+.newsletter-form-popup form {
+  margin-top: 16px;
+}
+
+.newsletter-form-popup p, input {
+  font-size: 10px;
+  margin-bottom: 8px;
+}
+
+.newsletter-form-popup input {
+  width: 80%;
+}
+
+.newsletter-btn {
+  background-color: $pink;
+  color: white;
+  padding: 4px 16px;
+  box-shadow: none;
+  border: none;
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-size: 10px;
+}
+
+.newsletter-btn:hover {
+  opacity: 90%;
+  transition: 0.2s;
+}
+
+.newsletter-form-popup i {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  color: darkgray;
+}
+
+.newsletter-form-popup i:hover {
+  opacity: 90%;
+  transition: 0.2s;
+}
